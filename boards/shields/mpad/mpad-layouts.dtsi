@@ -7,7 +7,7 @@
     layout_numpad_20_key: layout_numpad_20_key {
         compatible = "zmk,physical-layout";
         display-name = "20 Key Numpad";
-        transform = <default_transform>;
+        transform = <&default_transform>;
 
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100    0    0       0     0     0>
