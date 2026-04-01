@@ -1,0 +1,2 @@
+config SHIELD_MPAD
+    def_bool $(shields_list_contains,mpad)
