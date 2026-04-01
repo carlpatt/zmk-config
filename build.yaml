@@ -8,5 +8,7 @@
 # board: [ "nice_nano" ]
 # shield: [ "corne_left", "corne_right" ]
 include:
-   - board: nice_nano
-     shield: mpad
+  - board: nice_nano
+    shield: mpad
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y

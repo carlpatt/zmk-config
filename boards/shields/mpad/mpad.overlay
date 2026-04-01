@@ -8,7 +8,9 @@
 
 / {
     chosen {
-        zmk,physical-layout = &default_layout;
+        zmk,physical-layout = &layout_numpad_20_key;
+        znk,kscan = &kscan
+	    zmk,underglow = &led_strip;
     };
 
     kscan: kscan {
