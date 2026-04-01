@@ -9,7 +9,7 @@
 / {
     chosen {
         zmk,physical-layout = &layout_numpad_20_key;
-        znk,kscan = &kscan
+        zmk,kscan = &kscan;
 	    zmk,underglow = &led_strip;
     };
 
