@@ -4,7 +4,6 @@
 
 #include <dt-bindings/zmk/matrix_transform.h>
 #include "mpad-layouts.dtsi"
-#include "boards/nice_nano_nrf52840_zmk.overlay"
 
 / {
     chosen {
