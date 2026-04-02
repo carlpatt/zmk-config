@@ -9,7 +9,7 @@
 
 &led_strip {
     chain-length = <20>;
-}
+};
 
 / {
     // Define a default keymap here.
