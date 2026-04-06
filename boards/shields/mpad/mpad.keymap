@@ -34,7 +34,7 @@
                 &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &none
                 &out OUT_TOG    &none           &none           &bt BT_CLR
                 &none           &none           &none           &none
-                &none           &none           &none           &none
+                &none           &none           &none           &studio_unlock
             >;
         };
 
