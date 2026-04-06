@@ -84,7 +84,7 @@
 
 &layout_numpad_20_key {
     transform = <&default_transform>;
-}
+};
 
 &left_encoder {
     status = "okay";
