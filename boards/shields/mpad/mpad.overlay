@@ -9,6 +9,7 @@
     chosen {
         zmk,physical-layout = &layout_numpad_20_key;
         zmk,kscan = &kscan;
+        zmk,matrix-transform = <&default_transform>;
     };
 
     kscan: kscan {
