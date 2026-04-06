@@ -83,7 +83,7 @@
 };
 
 &layout_numpad_20_key {
-    transform + <&default_transform>;
+    transform = <&default_transform>;
 }
 
 &left_encoder {
