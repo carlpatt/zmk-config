@@ -59,7 +59,7 @@
 
         macro_layer {
             bindings = <
-                &to DEFAULT    &none   &none    &none
+                &to DEFAULT    &none   &none    &studio_unlock
                 &none    &none   &none    &none
                 &none    &none   &none    &none
                 &none    &none   &none    &none
@@ -67,7 +67,7 @@
             >;
         };
 
-        bt_layer {
+        fn_layer {
             bindings = <
                 &to 0           &none           &none           &bootloader
                 &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &none
