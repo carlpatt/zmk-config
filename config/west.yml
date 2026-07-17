@@ -6,8 +6,8 @@ manifest:
       url-base: https://github.com/awkannan
   projects:
     - name: zmk
-      remote: awkannan      # Changed from zmkfirmware to awkannan
-      revision: develop     # Changed from main to develop
+      remote: awkannan
+      revision: develop
       import: app/west.yml
     - name: zmk-smart-rgbled-widget
       remote: awkannan
