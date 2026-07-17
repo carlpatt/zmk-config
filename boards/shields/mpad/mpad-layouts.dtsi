@@ -75,9 +75,3 @@
                          LED_COLOR_ID_BLUE>;
     };
 };
-
-/ {
-    chosen {
-        zmk,underglow = &led_strip;
-    };
-};
