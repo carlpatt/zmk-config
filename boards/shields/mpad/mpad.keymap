@@ -33,10 +33,10 @@
         };
 
         inc_dec_msc: inc_dec_msc {
-            compatible = "zmk,behavior-sensor-rotate";
+            compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
             bindings = <&msc>, <&msc>;
-            tap-ms = <30>;
+            tap-ms = <150>;
         };
     };
 
