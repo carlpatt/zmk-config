@@ -8,20 +8,13 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
-/ {
-    chosen {
-        zmk,underglow = &led_strip;
-    };
-};
-
-&led_strip {
-    chain-length = <20>;
-};
-
 #define DEFAULT 0
 #define LOWER   1
 #define RAISE   2
 
+&led_strip {
+    chain-length = <20>;
+};
 
 / {
     behaviors {
