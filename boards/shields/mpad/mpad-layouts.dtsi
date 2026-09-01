@@ -4,7 +4,7 @@
 #include <physical_layouts.dtsi>
 
 / {
-    layout_numpad_22_key: layout_numpad_20_key {
+    layout_numpad_22_key: layout_numpad_22_key {
         compatible = "zmk,physical-layout";
         display-name = "22 Key Numpad";
 
