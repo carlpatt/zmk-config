@@ -87,7 +87,7 @@
     };
 };
 
-&layout_numpad_20_key {
+&layout_numpad_22_key {
     transform = <&default_transform>;
 };
 
