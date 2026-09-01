@@ -2,6 +2,67 @@
 // See https://zmk.dev/docs/development/hardware-integration/new-shield for more
 // instructions.
 
+/*
+* ====================================================================================
+* GENERAL PRO MICRO / NICE!NANO (nRF52840) PIN MAPPING REFERENCE
+* ====================================================================================
+*
+* PRO MICRO ALIAS    SILKSCREEN LABEL    nRF52840 MCU PIN    COMMON PROTOCOL / USAGE
+* ------------------------------------------------------------------------------------
+* &pro_micro 0       D0 / RX             P0.06               UART RX
+* &pro_micro 1       D1 / TX             P0.08               UART TX
+* &pro_micro 2       D2                  P0.17               I2C SDA / SPI MOSI / GPIO
+* &pro_micro 3       D3                  P0.20               I2C SCL / GPIO
+* &pro_micro 4       D4                  P0.22               GPIO
+* &pro_micro 5       D5                  P0.24               GPIO
+* &pro_micro 6       D6                  P1.00               GPIO
+* &pro_micro 7       D7                  P0.11               GPIO
+* &pro_micro 8       D8                  P1.04               GPIO
+* &pro_micro 9       D9                  P1.06               GPIO
+* &pro_micro 10      D10                 P0.09               NFC1 / CS / GPIO
+* ------------------------------------------------------------------------------------
+* &pro_micro 16      16 / MOSI           P0.10               NFC2 / SPI MOSI / GPIO
+* &pro_micro 14      14 / MISO           P1.11               SPI MISO / GPIO
+* &pro_micro 15      15 / SCLK           P1.13               SPI SCK / GPIO
+* ------------------------------------------------------------------------------------
+* &pro_micro 18      18 / A0             P1.15               Analog In / GPIO
+* &pro_micro 19      19 / A1             P0.02               Analog In / GPIO
+* &pro_micro 20      20 / A2             P0.29               Analog In / GPIO
+* &pro_micro 21      21 / A3             P0.31               Analog In / GPIO
+* ====================================================================================
+*/
+
+/*
+* ====================================================================================
+* MPAD PRO MICRO PIN MAPPING REFERENCE
+* ====================================================================================
+*
+* FUNCTION          NET NAME[cite: 1] MCU PIN[cite: 1]  PRO MICRO ALIAS    HARDWARE TARGET[cite: 1]
+* ------------------------------------------------------------------------------------
+* Matrix Rows       ROW0        P0.09       &pro_micro 10      Key Row 0 (MX1–MX4)[cite: 1]
+*                   ROW1        P0.10       &pro_micro 16      Key Row 1 (MX5–MX8)[cite: 1]
+*                   ROW2        P1.11       &pro_micro 14      Key Row 2 (MX9–MX12)[cite: 1]
+*                   ROW3        P1.13       &pro_micro 15      Key Row 3 (MX13–MX16)[cite: 1]
+*                   ROW4        P1.15       &pro_micro 18      Key Row 4 (MX17–MX20)[cite: 1]
+*                   ROW5        P0.24       &pro_micro 5       Left Encoder Button (SW1)[cite: 1]
+*                   ROW6        P0.22       &pro_micro 4       Right Encoder Button (SW2)[cite: 1]
+* ------------------------------------------------------------------------------------
+* Matrix Columns    COL0        P1.00       &pro_micro 6       Matrix Column 0[cite: 1]
+*                   COL1        P0.11       &pro_micro 7       Matrix Column 1[cite: 1]
+*                   COL2        P1.04       &pro_micro 8       Matrix Column 2[cite: 1]
+*                   COL3        P1.06       &pro_micro 9       Matrix Column 3[cite: 1]
+* ------------------------------------------------------------------------------------
+* Left Encoder      RE0A        P0.20       &pro_micro 3       Left Encoder Channel A[cite: 1]
+*                   RE0B        P0.17       &pro_micro 2       Left Encoder Channel B[cite: 1]
+* ------------------------------------------------------------------------------------
+* Right Encoder     RE1A        P0.29       &pro_micro 20      Right Encoder Channel A[cite: 1]
+*                   RE1B        P0.02       &pro_micro 19      Right Encoder Channel B[cite: 1]
+* ------------------------------------------------------------------------------------
+* RGB LED Strip     LEDS        P0.08       &pro_micro 1       SK6803 / WS2812 Data In[cite: 1]
+* ====================================================================================
+*/
+
+
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <dt-bindings/led/led.h>
 #include <dt-bindings/pinctrl/nrf-pinctrl.h>
@@ -26,23 +87,21 @@
         diode-direction = "col2row";
         wakeup-source;
 
-        // Replace these comments with the GPIO pins in the matrix.
-        // See https://zmk.dev/docs/development/hardware-integration/new-shield#shield-overlays
         col-gpios
-            = <&pro_micro 6 GPIO_ACTIVE_HIGH>
-            , <&pro_micro 7 GPIO_ACTIVE_HIGH>
-            , <&pro_micro 8 GPIO_ACTIVE_HIGH>
-            , <&pro_micro 9 GPIO_ACTIVE_HIGH>
+            = <&pro_micro 6 GPIO_ACTIVE_HIGH> /* COL0 (P1.00) */
+            , <&pro_micro 7 GPIO_ACTIVE_HIGH> /* COL1 (P0.11) */
+            , <&pro_micro 8 GPIO_ACTIVE_HIGH> /* COL2 (P1.04) */
+            , <&pro_micro 9 GPIO_ACTIVE_HIGH> /* COL3 (P1.06) */
             ;
 
         row-gpios
-            = <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* ROW0 (P0.09) - Top Keys MX1-MX4 */
+            , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* ROW1 (P0.10) - Keys MX5-MX8     */
+            , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* ROW2 (P1.11) - Keys MX9-MX12    */
+            , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* ROW3 (P1.13) - Keys MX13-MX16   */
+            , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* ROW4 (P1.15) - Keys MX17-MX20   */
+            , <&pro_micro  5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* ROW5 (P0.24) - Left Encoder SW1 */
+            , <&pro_micro  4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* ROW6 (P0.22) - Right Encoder SW2*/
             ;
     };
 
