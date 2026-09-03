@@ -119,7 +119,7 @@
 
         macro_layer {
             bindings = <
-                &none          &kp LC(N0)
+                &none          &kp LC(KP_NUMBER_0)
                 &teams_ptt     &kp LC(LS(M))        &kp LC(LS(K))     &kp LC(LS(O))
                 &kp LC(P)      &kp LC(LS(O))        &kp LC(LS(R))     &kp LC(LS(P))
                 &kp LC(GRAVE)  &kp LC(LS(GRAVE))    &kp LA(LS(UP))    &kp LA(LS(DOWN))
