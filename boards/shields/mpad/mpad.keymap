@@ -23,7 +23,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&to>, <&mo>;
+            bindings = <&to>, <&to>;
         };
 
         inc_dec_msc: inc_dec_msc {
@@ -38,7 +38,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&kp KP_COMMA>, <&kp KP_DOT>; /* <Hold, Tap> */
+            bindings = <&kp, &kp; /* <Hold, Tap> */
         };
     };
 
@@ -108,11 +108,11 @@
         default_layer {
             bindings = <
                 &kp C_MUTE   &kp C_PP
-                &kp KP_NUM   &kp KP_LPAR  &kp KP_RPAR   &kp KP_DIVIDE
-                &kp KP_N7    &kp KP_N8    &kp KP_N9     &kp KP_MULTIPLY
-                &kp KP_N4    &kp KP_N5    &kp KP_N6     &kp KP_MINUS
-                &kp KP_N1    &kp KP_N2    &kp KP_N3     &kp KP_PLUS
-                &clt 2 1     &kp KP_N0    &dot_comma     &kp KP_ENTER
+                &kp KP_NUM   &kp KP_LPAR  &kp KP_RPAR                   &kp KP_DIVIDE
+                &kp KP_N7    &kp KP_N8    &kp KP_N9                     &kp KP_MULTIPLY
+                &kp KP_N4    &kp KP_N5    &kp KP_N6                     &kp KP_MINUS
+                &kp KP_N1    &kp KP_N2    &kp KP_N3                     &kp KP_PLUS
+                &clt 2 1     &kp KP_N0    &dot_comma KP_COMMA KP_DOT    &kp KP_ENTER
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_msc SCRL_RIGHT SCRL_LEFT>;
         };
