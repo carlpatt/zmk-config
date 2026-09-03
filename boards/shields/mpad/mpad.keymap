@@ -35,7 +35,7 @@
 
         dot_comma: dot_comma {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             bindings = <&kp KP_COMMA>, <&kp KP_DOT>; /* <Hold, Tap> */
