@@ -73,7 +73,7 @@
     chosen {
         zmk,physical-layout = &layout_numpad_22_key;
         zmk,kscan = &kscan;
-        zmk,matrix-transform = <&default_transform>;
+        zmk,matrix-transform = &default_transform;
         zmk,underglow = &led_strip;
     };
 
@@ -111,7 +111,7 @@
         // for how to configure this
         compatible = "zmk,matrix-transform";
         columns = <4>;
-        rows = <5>;
+        rows = <7>;
 
         map = <
             RC(5, 0) RC(6, 0)
