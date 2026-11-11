@@ -13,9 +13,7 @@ manifest:
     # Custom behavior module (3-state layer + underglow color toggle),
     # distributed as its own repo (same pattern as zmk-leader-key).
     - name: mpad-layer-ug
-      remote: zmkfirmware
-      url-base: https://github.com/carlpatt
-      repository: zmk-layer-ug
+      url: https://github.com/carlpatt/zmk-layer-ug
       revision: main
   self:
     path: config
