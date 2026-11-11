@@ -44,7 +44,7 @@
         /* Three-state layer/underglow toggle:
          *   default + tap  -> LOWER (blue)
          *   default + hold -> RAISE (red)
-         *   LOWER/RAISE + tap -> default (restore color + effect) */
+         *   LOWER/RAISE + release -> default (restore color + effect) */
         layer_ug: layer_ug {
             compatible = "zmk,behavior-layer-ug";
             #binding-cells = <2>;
