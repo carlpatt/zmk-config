@@ -10,5 +10,9 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
+    # Custom behavior module (3-state layer + underglow color toggle).
+    # Local project: path is relative to the manifest (config/).
+    - name: mpad-layer-ug
+      path: ../modules/layer-ug
   self:
     path: config

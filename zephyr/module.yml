@@ -1,6 +1,0 @@
-name: mpad-layer-ug
-build:
-  cmake: zephyr
-  kconfig: zephyr/Kconfig
-  settings:
-    dts_root: zephyr
