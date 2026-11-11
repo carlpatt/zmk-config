@@ -135,7 +135,7 @@
                 &kp LC(P)      &kp LC(LS(O))        &kp LC(LS(R))     &kp LC(LS(P))
                 &kp LC(GRAVE)  &kp LC(LS(GRAVE))    &kp LA(LS(UP))    &kp LA(LS(DOWN))
                 &none          &none                &none             &none
-                &to 0          &ssh_root            &none             &none
+                &layer_ug 1 2  &ssh_root            &none             &none
             >;
             sensor-bindings = <&inc_dec_kp LC(TAB) LC(LS(TAB)) &inc_dec_kp LC(KP_PLUS) LC(KP_MINUS)>;
         };
@@ -147,7 +147,7 @@
                 &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_CLR
                 &rgb_ug RGB_HUI   &rgb_ug RGB_HUD   &rgb_ug RGB_BRI   &rgb_ug RGB_BRD
                 &rgb_ug RGB_SAI   &rgb_ug RGB_SAD   &rgb_ug RGB_SPI   &rgb_ug RGB_SPD
-                &to 0             &rgb_ug RGB_TOG   &rgb_ug RGB_EFF   &none
+                &layer_ug 1 2  &rgb_ug RGB_TOG   &rgb_ug RGB_EFF   &none
             >;
         };
     };
