@@ -11,9 +11,12 @@ manifest:
       remote: zmkfirmware
       import: app/west.yml
     # Custom behavior module (3-state layer + underglow color toggle),
-    # distributed as its own repo (same pattern as zmk-leader-key).
+    # distributed as its own repo (same pattern as zmk-leader-key). path keeps
+    # the checkout out of the workspace root so it doesn't break ZMK shield
+    # discovery.
     - name: mpad-layer-ug
       url: https://github.com/carlpatt/zmk-layer-ug
       revision: main
+      path: modules/mpad-layer-ug
   self:
     path: config
